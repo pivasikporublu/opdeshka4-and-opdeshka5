@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-1</title>
+</head>
+<body>
+    <button id="btn1">click</button>
+    <button id="btn2">show</button>
+    <textarea id="txt1" placeholder="your data"></textarea>
+    <script>
+        let btn1 = document.getElementById('btn1')
+        let btn2 = document.getElementById('btn2')
+        let txt1 = document.getElementById('txt1')
+        let mainarr = []
+        let parr = []
+        let sorthappened
+        btn1.onclick = function(){
+            mainarr.push(txt1.value)
+            console.log(txt1.value)
+            txt1.value = "" 
+            Addparr(parr)
+        }
+        btn2.onclick = function(){
+            BubbleSort(mainarr)
+            console.log(mainarr)
+            console.log(parr)
+
+
+        }
+        function Addparr(parr){
+            for(i=0; i<mainarr.length; i++){
+                if (txt1.value==mainarr[i]){
+                    for(j=0; j<parr.length; j++){
+                        if(txt1.value==parr[j]){
+                            parr[j]++
+                        }
+                        else{
+                            parr.push()
+                        }
+                    }
+                }
+            }   
+        }
+        function BubbleSort(mainarr){
+            for(i=mainarr.length; i>0;i--){
+               for(j=1; j<mainarr.length;j++){
+                   if(mainarr[j]<mainarr[j-1]){
+                       let swapper = mainarr[j]
+                       mainarr[j] = mainarr[j-1]
+                       mainarr[j-1] = swapper
+                       sorthappened = true
+                   }
+                   if (sorthappened!=true){
+                    
+                   }
+               }
+            }  
+        }
+    </script>
+</body>
+</html>
